@@ -1,0 +1,19 @@
+<div class="container">
+	<h2>Admin Dashboard</h2>
+<table class="table table-bordered">
+
+<tr>
+<th>Email</th>
+<th>Action</th>
+</tr>
+<%@users.each do |user|%>
+<tr>
+<td><%= user.email%></td>
+<td><%= link_to "Delete account",
+      registration_path(user),
+      data: { confirm: "Are you sure?" },
+      method: :delete, class:"btn btn-warning" %></td>
+      </tr>
+<%end%>
+</table>
+</div>
